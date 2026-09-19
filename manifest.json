@@ -1,12 +1,31 @@
 {
-  "background_color": "#ffffff",
-  "dir": "ltr",
-  "display": "fullscreen",
-  "name": "Flowdino",
-  "orientation": "any",
-  "scope": "/",
+  "name": "Flowdino | فلودینو",
   "short_name": "فلودینو",
+  "description": "برنامهٔ مدیریت برنامه‌های درسی، تکالیف و زمان مطالعه",
+  "lang": "fa",
+  "dir": "rtl",
   "start_url": "./",
-  "theme_color": "#f7fbef",
-  "lang": "fa"
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#F7FBEF",
+  "theme_color": "#A8D95B",
+  "categories": [
+    "education",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "./icons/launchericon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/launchericon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }
