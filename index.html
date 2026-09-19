@@ -131,7 +131,6 @@ function openTour(){tourIndex=0;$('#tour').classList.add('show');renderTour()}
 function renderTour(){const p=tourPages[tourIndex];$('#tourArt').textContent=p[0];$('#tourTitle').textContent=p[1];$('#tourText').textContent=p[2];$('#tourDots').innerHTML=tourPages.map((_,i)=>`<i class="${i===tourIndex?'active':''}"></i>`).join('');$('#tourNext').textContent=tourIndex===tourPages.length-1?'شروع کنیم':'بعدی'}
 $('#tourNext').onclick=()=>{if(tourIndex===0&&!state.name){$('#tour').classList.remove('show');if(localStorage.getItem('flowdino_consent')!=='1')$('#consent').classList.add('show');else openModal('profile');state.tourDone=true;save();return}if(tourIndex<tourPages.length-1){tourIndex++;renderTour()}else{$('#tour').classList.remove('show');if(!state.name)openModal('profile');state.tourDone=true;save()}}
 $('#tourSkip').onclick=()=>{$('#tour').classList.remove('show');if(!state.name)openModal('profile');state.tourDone=true;save()}
-
 function ensureDeleteModal(){if($('#deleteConfirm'))return;document.body.insertAdjacentHTML('beforeend','<div class="modal" id="deleteConfirm"><div class="sheet"><h3>حذف همهٔ اطلاعات؟</h3><p style="font-size:12px;line-height:2;color:var(--muted)">همهٔ اطلاعات فلودینو از این دستگاه حذف می‌شود و قابل بازگشت نیست.</p><div class="actions"><button type="button" class="secondary" id="cancelDelete">انصراف</button><button type="button" class="primary" id="confirmDelete">حذف اطلاعات</button></div></div></div>');$('#cancelDelete').onclick=()=>$('#deleteConfirm').classList.remove('show');$('#confirmDelete').onclick=()=>{const theme=state.theme;localStorage.removeItem(key);state=Object.assign({},blank,{theme});save();$('#deleteConfirm').classList.remove('show');active='home';dayOffset=0;render();alert('اطلاعات با موفقیت حذف شد.')}}
 function openDeleteConfirm(){ensureDeleteModal();$('#deleteConfirm').classList.add('show')}
 
@@ -142,3 +141,4 @@ applyTheme();render();timerText();dayTimerText();
 if(localStorage.getItem('flowdino_consent')!=='1'){$('#consent').classList.add('show')}else if(!state.tourDone){setTimeout(openTour,350)}
 </script>
 </body></html>
+<link rel="manifest" href="./manifest.json">
