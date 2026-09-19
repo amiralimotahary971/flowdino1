@@ -1,0 +1,12 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "fullscreen",
+  "name": "Flowdino",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "فلودینو",
+  "start_url": "./",
+  "theme_color": "#f7fbef",
+  "lang": "fa"
+}
